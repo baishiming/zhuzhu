@@ -6,11 +6,51 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_box"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="470dp"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/bg_treasure_box">
+
+        <com.example.zhuzhu.customview.NoScrollViewPager
+            android:id="@+id/vp_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+
+        </com.example.zhuzhu.customview.NoScrollViewPager>
+
+
+        <ImageView
+            android:id="@+id/iv_dialog_box_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/icon_dialog_box_help">
+        </ImageView>
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-90dp"
+        android:layout_above="@+id/rl_box">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_dialog_box_top">
+        </ImageView>
+        <ImageView
+            android:id="@+id/iv_box_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_dialog_box_level_1">
+        </ImageView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

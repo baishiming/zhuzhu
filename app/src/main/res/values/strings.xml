@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">zhuzhu</string>
+
+    <string name="str_box_help">1.房间内有人送礼，宝箱的能量槽后随之增加。\n\n
+
+2.能量槽充满之后，宝箱会在聊天室内自动打开。\n\n
+
+3.贡献值(在每次能量槽中赠送礼物价值)越高的用户从宝箱里获得越高级的礼物的概率越高\n\n
+
+4.所有房间内的用户都可以参与领奖，可以得到头像框/坐骑，背包礼物后者钻石奖励\n\n
+
+5.宝箱等级越高，奖励越高级越珍贵\n\n
+
+6.头像框/坐骑可在用户个人账号中查看领取的礼物可以在房间内背包里查看到，3天内可以使用\n\n
+
+7.宝箱能力槽在中国时间每天中午12点清零</string>
+
+    <string name="str_box_level_1">LV1</string>
+    <string name="str_box_level_2">LV2</string>
+    <string name="str_box_level_3">LV3</string>
+    <string name="str_box_level_4">LV4</string>
+    <string name="str_box_level_5">LV5</string>
+
+    <string name="str_Current">Current</string>
+    <string name="str_Prize">Prize</string>
+    <string name="str_box_send">Send a gift for the Boom Rocket</string>
 </resources>
