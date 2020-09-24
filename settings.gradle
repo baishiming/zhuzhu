@@ -1,0 +1,2 @@
+rootProject.name='zhuzhu'
+include ':app', ':CustomProgressBar'
