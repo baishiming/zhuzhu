@@ -120,23 +120,36 @@
         android:textColor="@color/color_white">
 
     </TextView>
-    
-    <ProgressBar
-        android:id="@+id/pb_box"
+
+    <RelativeLayout
+        android:id="@+id/rl_pb"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="28dp"
-        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_height="100dp"
         android:layout_below="@+id/tv_box_current">
-    </ProgressBar>
+
+        <SeekBar
+            android:id="@+id/pb_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progress="50"
+            android:max="100"
+            android:progressDrawable="@drawable/dialog_box_progressbar_bg"
+            android:layout_centerInParent="true">
+        </SeekBar>
+
+
+    </RelativeLayout>
+
 
     <TextView
         android:id="@+id/tv_box_prize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:layout_below="@+id/pb_box"
+        android:layout_below="@+id/rl_pb"
         android:textSize="12sp"
         android:text="@string/str_Prize"
         android:textColor="@color/color_white">
