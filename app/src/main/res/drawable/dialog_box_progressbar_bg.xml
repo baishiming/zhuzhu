@@ -2,10 +2,15 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@android:id/background"
+        android:height="26dp"
         android:drawable="@drawable/u2">
     </item>
 
     <item android:id="@android:id/progress"
+        android:height="26dp"
         android:drawable="@drawable/u3">
+        <clip>
+
+        </clip>
     </item>
 </layer-list>

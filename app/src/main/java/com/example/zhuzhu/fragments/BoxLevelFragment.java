@@ -1,6 +1,10 @@
 package com.example.zhuzhu.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.zhuzhu.R;
 import com.example.zhuzhu.callback.DialogBoxCallback;
+import com.example.zhuzhu.customview.RLProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +41,6 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
     public Button btn_box_level_5;
     public LinearLayout ll_box_level;
     public TextView tv_box_current;
-    public ProgressBar pb_box;
     public TextView tv_box_prize;
     public ImageView iv_box_gift_1;
     public TextView tv_box_gift_1;
@@ -60,6 +64,7 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
     public TextView tv_box_send;
     private List<Button> btnLevelList;
     private DialogBoxCallback dialogBoxCallback;
+    private RLProgressBar rlProgressBar;
 
     @Nullable
     @Override
@@ -105,7 +110,6 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
 
         this.ll_box_level = (LinearLayout) rootView.findViewById(R.id.ll_box_level);
         this.tv_box_current = (TextView) rootView.findViewById(R.id.tv_box_current);
-        this.pb_box = (ProgressBar) rootView.findViewById(R.id.pb_box);
         this.tv_box_prize = (TextView) rootView.findViewById(R.id.tv_box_prize);
         this.iv_box_gift_1 = (ImageView) rootView.findViewById(R.id.iv_box_gift_1);
         this.tv_box_gift_1 = (TextView) rootView.findViewById(R.id.tv_box_gift_1);
@@ -127,7 +131,32 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
         this.rl_box_gift_6 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_6);
         this.rl_box_gift = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift);
         this.tv_box_send = (TextView) rootView.findViewById(R.id.tv_box_send);
+        rlProgressBar = rootView.findViewById(R.id.rl_pb);
+        handler.sendEmptyMessageDelayed(1,10);
     }
+
+    int position = 1;
+
+    private Handler handler = new Handler(){
+        @SuppressLint("HandlerLeak")
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    position++;
+                    Log.e("bsm","postion=="+position);
+                    if(position == 100){
+                        handler.removeMessages(1);
+                    } else {
+                        handler.sendEmptyMessageDelayed(1,10);
+                    }
+                    rlProgressBar.setPosition(position);
+                    break;
+            }
+        }
+    };
+
 
     @Override
     public void onClick(View view) {
@@ -136,32 +165,45 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_1);
                 }
+                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_1);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_2:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_2);
                 }
+                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_2);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_3:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_3);
                 }
+                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_3);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_4:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_4);
                 }
+                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_4);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_5:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_5);
                 }
+                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_5);
                 initBtnLevel((Button) view);
                 break;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (handler != null) {
+            handler.removeMessages(1);
+        }
+        super.onDestroy();
     }
 }

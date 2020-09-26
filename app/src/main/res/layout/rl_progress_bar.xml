@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_box_pb"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:paddingLeft="18dp"
+    android:paddingRight="20dp">
+
+    <ProgressBar
+        android:id="@+id/pb_box"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginLeft="2dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="50"
+        android:max="100"
+        android:thumb="@drawable/icon_box_thumb_1"
+        android:progressDrawable="@drawable/dialog_box_progressbar_bg"
+        android:layout_centerInParent="true">
+    </ProgressBar>
+
+    <ImageView
+        android:id="@+id/iv_pb_thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_box_thumb_1">
+    </ImageView>
+
+</RelativeLayout>

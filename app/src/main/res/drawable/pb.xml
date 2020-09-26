@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"> 这个是列表布局嘛
+    <item android:id="@android:id/background"> 列表，这是个相当于背景色的样式
+        <shape android:shape="rectangle"> 形状控件为矩形
+            <stroke android:width="3dp"
+                android:dashGap="4dp"
+                android:color="@android:color/holo_blue_bright"/> 这是边框颜色
+            <corners android:radius="25dp"/> 这是圆角偏移量，h5学过应该也懂，就是四个角的弧度，25dp指的是这条弧是取自半径为这么多的圆
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress"> 这个是二级进度的样式列表
+        <clip>
+            <shape android:shape="rectangle"> 也是矩形
+                <solid android:color="@android:color/holo_orange_dark"/> 铺上颜色
+                <corners android:radius="25dp"/> 和背景样式一样这三个控件有点像帧布局，一层一层铺上去，
+            </shape>
+        </clip>
+    </item>
+
+    <item android:id="@android:id/progress"> 这个是进度条进度显示（最顶层显示）
+        <clip>
+            <shape android:shape="rectangle"> 矩形
+                <solid android:color="@android:color/holo_green_dark"/> 为了突出，颜色肯定得不一样
+                <corners android:radius="25dp"/> 同上
+            </shape>
+        </clip>
+    </item>
+</layer-list>

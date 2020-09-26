@@ -25,4 +25,9 @@
         <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
     </style>
 
+    <style name="MyProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:background">@drawable/u2</item>
+        <item name="android:progressDrawable">@drawable/u3</item>
+    </style>
+
 </resources>
