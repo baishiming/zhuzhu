@@ -29,6 +29,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="150dp"
         android:gravity="center_vertical">
 
         <TextView
@@ -36,7 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:layout_marginLeft="150dp"
             android:textColor="@color/color_white">
 
         </TextView>
@@ -44,14 +44,17 @@
         <ImageView
             android:id="@+id/iv_item_box_level"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_item_box_ranking_name">
 
         </ImageView>
 
         <ImageView
             android:id="@+id/iv_item_box_level_1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_item_box_level"
+            android:layout_below="@+id/tv_item_box_ranking_name">
 
         </ImageView>
 

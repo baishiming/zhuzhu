@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.zhuzhu.R;
+import com.example.zhuzhu.adapters.MyFragmentPagerAdapter;
 import com.example.zhuzhu.callback.DialogBoxCallback;
 import com.example.zhuzhu.customview.RLProgressBar;
 
@@ -25,6 +26,8 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * @author bsm
@@ -34,37 +37,25 @@ import androidx.fragment.app.Fragment;
  * @time 2020/9/24 20:37
  */
 public class BoxLevelFragment extends Fragment implements View.OnClickListener {
+
     public Button btn_box_level_1;
     public Button btn_box_level_2;
     public Button btn_box_level_3;
     public Button btn_box_level_4;
     public Button btn_box_level_5;
-    public LinearLayout ll_box_level;
-    public TextView tv_box_current;
-    public TextView tv_box_prize;
-    public ImageView iv_box_gift_1;
-    public TextView tv_box_gift_1;
-    public RelativeLayout rl_box_gift_1;
-    public ImageView iv_box_gift_2;
-    public TextView tv_box_gift_2;
-    public RelativeLayout rl_box_gift_2;
-    public ImageView iv_box_gift_3;
-    public TextView tv_box_gift_3;
-    public RelativeLayout rl_box_gift_3;
-    public ImageView iv_box_gift_4;
-    public TextView tv_box_gift_4;
-    public RelativeLayout rl_box_gift_4;
-    public ImageView iv_box_gift_5;
-    public TextView tv_box_gift_5;
-    public RelativeLayout rl_box_gift_5;
-    public ImageView iv_box_gift_6;
-    public TextView tv_box_gift_6;
-    public RelativeLayout rl_box_gift_6;
-    public RelativeLayout rl_box_gift;
-    public TextView tv_box_send;
+    public ViewPager viewPager_level;
+
     private List<Button> btnLevelList;
     private DialogBoxCallback dialogBoxCallback;
-    private RLProgressBar rlProgressBar;
+
+    private BoxLevel1Fragment boxLevel1Fragment;
+    private BoxLevel1Fragment boxLevel2Fragment;
+    private BoxLevel1Fragment boxLevel3Fragment;
+    private BoxLevel1Fragment boxLevel4Fragment;
+    private BoxLevel1Fragment boxLevel5Fragment;
+
+    private ArrayList<Fragment> fragmentList = null;
+    private MyFragmentPagerAdapter myFragmentPagerAdapter;
 
     @Nullable
     @Override
@@ -75,9 +66,27 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
             button.setOnClickListener(this);
         }
         initBtnLevel(btn_box_level_1);
-
+        initViewPager();
         return inflate;
     }
+
+    private void initViewPager() {
+        fragmentList = new ArrayList<>();
+        boxLevel1Fragment = new BoxLevel1Fragment();
+        boxLevel2Fragment = new BoxLevel1Fragment();
+        boxLevel3Fragment = new BoxLevel1Fragment();
+        boxLevel4Fragment = new BoxLevel1Fragment();
+        boxLevel5Fragment = new BoxLevel1Fragment();
+        fragmentList.add(boxLevel1Fragment);
+        fragmentList.add(boxLevel2Fragment);
+        fragmentList.add(boxLevel3Fragment);
+        fragmentList.add(boxLevel4Fragment);
+        fragmentList.add(boxLevel5Fragment);
+        FragmentManager fragmentManager = getChildFragmentManager();
+        myFragmentPagerAdapter = new MyFragmentPagerAdapter(fragmentManager,fragmentList);
+        viewPager_level.setAdapter(myFragmentPagerAdapter);
+    }
+
 
     private void initBtnLevel(Button btn_box_level_1) {
         for (Button button : btnLevelList) {
@@ -102,37 +111,17 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
         this.btn_box_level_3 = (Button) rootView.findViewById(R.id.btn_box_level_3);
         this.btn_box_level_4 = (Button) rootView.findViewById(R.id.btn_box_level_4);
         this.btn_box_level_5 = (Button) rootView.findViewById(R.id.btn_box_level_5);
+
+        viewPager_level = rootView.findViewById(R.id.viewPager_level);
+
         btnLevelList.add(btn_box_level_1);
         btnLevelList.add(btn_box_level_2);
         btnLevelList.add(btn_box_level_3);
         btnLevelList.add(btn_box_level_4);
         btnLevelList.add(btn_box_level_5);
 
-        this.ll_box_level = (LinearLayout) rootView.findViewById(R.id.ll_box_level);
-        this.tv_box_current = (TextView) rootView.findViewById(R.id.tv_box_current);
-        this.tv_box_prize = (TextView) rootView.findViewById(R.id.tv_box_prize);
-        this.iv_box_gift_1 = (ImageView) rootView.findViewById(R.id.iv_box_gift_1);
-        this.tv_box_gift_1 = (TextView) rootView.findViewById(R.id.tv_box_gift_1);
-        this.rl_box_gift_1 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_1);
-        this.iv_box_gift_2 = (ImageView) rootView.findViewById(R.id.iv_box_gift_2);
-        this.tv_box_gift_2 = (TextView) rootView.findViewById(R.id.tv_box_gift_2);
-        this.rl_box_gift_2 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_2);
-        this.iv_box_gift_3 = (ImageView) rootView.findViewById(R.id.iv_box_gift_3);
-        this.tv_box_gift_3 = (TextView) rootView.findViewById(R.id.tv_box_gift_3);
-        this.rl_box_gift_3 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_3);
-        this.iv_box_gift_4 = (ImageView) rootView.findViewById(R.id.iv_box_gift_4);
-        this.tv_box_gift_4 = (TextView) rootView.findViewById(R.id.tv_box_gift_4);
-        this.rl_box_gift_4 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_4);
-        this.iv_box_gift_5 = (ImageView) rootView.findViewById(R.id.iv_box_gift_5);
-        this.tv_box_gift_5 = (TextView) rootView.findViewById(R.id.tv_box_gift_5);
-        this.rl_box_gift_5 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_5);
-        this.iv_box_gift_6 = (ImageView) rootView.findViewById(R.id.iv_box_gift_6);
-        this.tv_box_gift_6 = (TextView) rootView.findViewById(R.id.tv_box_gift_6);
-        this.rl_box_gift_6 = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift_6);
-        this.rl_box_gift = (RelativeLayout) rootView.findViewById(R.id.rl_box_gift);
-        this.tv_box_send = (TextView) rootView.findViewById(R.id.tv_box_send);
-        rlProgressBar = rootView.findViewById(R.id.rl_pb);
-        handler.sendEmptyMessageDelayed(1,10);
+        //rlProgressBar = rootView.findViewById(R.id.rl_pb);
+        //handler.sendEmptyMessageDelayed(1,10);
     }
 
     int position = 1;
@@ -151,7 +140,6 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
                     } else {
                         handler.sendEmptyMessageDelayed(1,10);
                     }
-                    rlProgressBar.setPosition(position);
                     break;
             }
         }
@@ -165,35 +153,30 @@ public class BoxLevelFragment extends Fragment implements View.OnClickListener {
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_1);
                 }
-                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_1);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_2:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_2);
                 }
-                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_2);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_3:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_3);
                 }
-                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_3);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_4:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_4);
                 }
-                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_4);
                 initBtnLevel((Button) view);
                 break;
             case R.id.btn_box_level_5:
                 if (dialogBoxCallback != null) {
                     dialogBoxCallback.onBackBoxIcon(R.drawable.icon_dialog_box_level_5);
                 }
-                rlProgressBar.setThumbIcon(R.drawable.icon_box_thumb_5);
                 initBtnLevel((Button) view);
                 break;
         }

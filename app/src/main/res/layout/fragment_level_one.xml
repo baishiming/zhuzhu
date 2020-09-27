@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_box_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:textSize="12sp"
+        android:text="@string/str_Current"
+        android:textColor="@color/color_white">
+
+    </TextView>
+
+    <com.example.zhuzhu.customview.RLProgressBar
+        android:id="@+id/rl_pb"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_below="@+id/tv_box_current"/>
+
+    <TextView
+        android:id="@+id/tv_box_prize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_below="@+id/rl_pb"
+        android:textSize="12sp"
+        android:text="@string/str_Prize"
+        android:textColor="@color/color_white">
+
+    </TextView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_box_gift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_box_prize">
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/dialog_box_gift_bg">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_1">
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/tv_box_gift_1"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_2"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/dialog_box_gift_bg"
+            android:layout_toRightOf="@+id/rl_box_gift_1">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_2">
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/tv_box_gift_2"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_3"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/dialog_box_gift_bg"
+            android:layout_toRightOf="@+id/rl_box_gift_2">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_3">
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/tv_box_gift_3"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_4"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_box_gift_2"
+            android:background="@drawable/dialog_box_gift_bg"
+            android:layout_toRightOf="@+id/rl_box_gift_1">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_4">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_box_gift_4"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_5"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_box_gift_2"
+            android:background="@drawable/dialog_box_gift_bg"
+            android:layout_toRightOf="@+id/rl_box_gift_4">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_5">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_box_gift_5"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_box_gift_6"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dialog_box_gift_bg"
+            android:layout_below="@+id/rl_box_gift_2"
+            android:layout_toRightOf="@+id/rl_box_gift_5">
+
+
+            <ImageView
+                android:id="@+id/iv_box_gift_6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_box_zuanshi"
+                android:layout_above="@+id/tv_box_gift_6">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_box_gift_6"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_box_zuanshi"
+                android:textSize="9sp"
+                android:drawablePadding="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:text="111"
+                android:textColor="@color/color_white">
+            </TextView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@drawable/share_dialog_box_bottom_bg"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_box_send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:drawablePadding="6dp"
+            android:drawableLeft="@drawable/icon_box_send_left"
+            android:drawableRight="@drawable/icon_box_send_right"
+            android:layout_centerHorizontal="true"
+            android:text="@string/str_box_send"
+            android:textColor="@color/color_white">
+
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
